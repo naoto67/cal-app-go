@@ -12,6 +12,7 @@ func New() *gin.Engine {
 	scheduleGroup := router.Group("/schedules")
 	{
 		scheduleGroup.GET("", scheduleHandler.Index)
+		scheduleGroup.GET("/:id", scheduleHandler.Show)
 	}
 
 	return router
