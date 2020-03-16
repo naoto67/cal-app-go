@@ -7,11 +7,11 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
-type db struct {
+type database struct {
 	orm *gorm.DB
 }
 
-var DB *db
+var DB *database
 
 func New() {
 	// datasource の定義
@@ -29,5 +29,5 @@ func New() {
 		panic(err)
 	}
 	// このパッケージが持っている変数に代入
-	DB = &db{orm: orm}
+	DB = &database{orm: orm}
 }
