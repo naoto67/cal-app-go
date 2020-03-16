@@ -11,3 +11,8 @@ func (db *database) FindAllSchedules() ([]model.Schedule, error) {
 
 	return schedules, nil
 }
+
+func (db *database) CreateSchedule(schedule model.Schedule) error {
+	db.orm.Create(&schedule)
+	return nil
+}
